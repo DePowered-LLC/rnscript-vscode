@@ -1,0 +1,41 @@
+{
+	"scopeName": "source.rnscript",
+	"patterns": [
+		{
+			"name": "entity.variable_declaration",
+			"match": "(let)(?:(?:(<)(?:([A-Za-z_][A-Za-z0-9_]*)(?:(:|->)(?:([A-Za-z_][A-Za-z0-9_]*))?)?)?)?(>))?\\s+",
+			"captures": {
+				"1": {
+					"name": "keyword.variable.let"
+				},
+				"2": {
+					"name": "punctuation.type_params.open"
+				},
+				"3": {
+					"name": "entity.name.type.namespace"
+				},
+				"4": {
+					"name": "punctuation.separator.type_access"
+				},
+				"5": {
+					"name": "support.type"
+				},
+				"6": {
+					"name": "punctuation.type_params.close"
+				}
+			}
+		},
+		{
+			"name": "keyword.variable.let",
+			"match": "let"
+		},
+		{
+			"name": "keyword.other.this",
+			"match": "this"
+		},
+		{
+			"include": "source.lua"
+		}
+	],
+	"repository": {}
+}

@@ -1,0 +1,20 @@
+@AllowGET()
+@Middleware('session')
+function index() {
+    set_header('A', 'b')
+
+    this->print(get_header('Host'))
+
+    let<rncore->number> test = '123'
+    let<rncore:table> result = {
+        a = test
+    }
+
+    let abc = 123
+
+    return this->json_data('text', false, result)
+}
+
+function b() {
+    return 1234
+}
